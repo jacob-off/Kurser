@@ -1,0 +1,81 @@
+name: Hent kurser
+
+on:
+  schedule:
+    - cron: "5 10 * * 1-5"   # midt på dagen (sommertid 12.05, vintertid 11.05)
+    - cron: "35 14 * * 1-5"  # etter børsslutt om sommeren (16.35)
+    - cron: "35 15 * * 1-5"  # etter børsslutt om vinteren (16.35)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  hent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install yfinance
+      - name: Hent kurser
+        run: |
+          python - <<'PY'
+          import json, time, datetime as dt
+          import yfinance as yf
+
+          TICKERS = ["OSEBX.OL", "OBX.OL",
+            "EQNR.OL", "DNB.OL", "MOWI.OL", "TEL.OL", "YAR.OL", "NHY.OL", "ORK.OL", "SALM.OL",
+            "AKRBP.OL", "KOG.OL", "GJF.OL", "STB.OL", "SRBNK.OL", "SUBC.OL", "FRO.OL", "AKER.OL",
+            "BAKKA.OL", "LSG.OL", "TGS.OL", "VAR.OL", "NOD.OL", "NEL.OL", "HEX.OL", "TOM.OL",
+            "SCHA.OL", "SCHB.OL", "ELK.OL", "ENTRA.OL", "AUSS.OL", "VEI.OL", "EPR.OL", "KID.OL",
+            "PROT.OL", "MING.OL", "BWLPG.OL", "HAFNI.OL", "WAWI.OL", "BORR.OL", "ODL.OL", "AKSO.OL",
+            "NAS.OL", "ATEA.OL", "CRAYN.OL", "KIT.OL", "BONHR.OL", "PLT.OL", "RECSI.OL", "AUTO.OL"]
+
+          def fetch(t):
+              tk = yf.Ticker(t)
+              d = tk.history(period="15d", interval="1d", auto_adjust=False)
+              if d.empty:
+                  raise ValueError("ingen daglige data")
+              closes = [{"date": str(i.date()), "close": round(float(r["Close"]), 4)} for i, r in d.tail(8).iterrows()]
+              last, as_of, day = closes[-1]["close"], closes[-1]["date"], closes[-1]["date"]
+              intraday = False
+              try:
+                  m = tk.history(period="1d", interval="5m", auto_adjust=False)
+                  if not m.empty:
+                      last = round(float(m["Close"].iloc[-1]), 4)
+                      as_of = m.index[-1].isoformat()
+                      day = str(m.index[-1].date())
+                      intraday = True
+              except Exception:
+                  pass
+              prev = [c["close"] for c in closes if c["date"] < day]
+              prev = prev[-1] if prev else None
+              chg = round((last / prev - 1) * 100, 2) if prev else None
+              return {"last": last, "asOf": as_of, "prevClose": prev, "changePct": chg,
+                      "intraday": intraday, "dailyCloses": closes}
+
+          out = {"generatedAt": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
+                 "source": "Yahoo Finance via yfinance (kan være forsinket)", "quotes": {}, "failed": {}}
+          for t in TICKERS:
+              for attempt in range(2):
+                  try:
+                      out["quotes"][t] = fetch(t)
+                      break
+                  except Exception as e:
+                      if attempt == 1:
+                          out["failed"][t] = str(e)[:120]
+                      time.sleep(1.5)
+              time.sleep(0.4)
+          if not out["quotes"]:
+              raise SystemExit("Fikk ingen kurser")
+          json.dump(out, open("kurser.json", "w"), ensure_ascii=False, indent=1)
+          print(len(out["quotes"]), "kurser,", len(out["failed"]), "feilet")
+          PY
+      - name: Lagre
+        run: |
+          git config user.name "kurser-bot"
+          git config user.email "kurser-bot@users.noreply.github.com"
+          git add kurser.json
+          git diff --cached --quiet || (git commit -m "Oppdater kurser" && git push)
