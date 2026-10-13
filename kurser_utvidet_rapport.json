@@ -1,0 +1,535 @@
+{
+ "schemaVersion": 1,
+ "runAt": "2026-10-13T07:17:51+00:00",
+ "runAtOslo": "2026-10-13T09:17:51+02:00",
+ "status": "delvis_gyldig",
+ "selftest": {
+  "resultat": "bestått",
+  "feil": [],
+  "merknad": "Logikktest med konstruerte data i minnet; ingen av disse dataene publiseres."
+ },
+ "kritisk": {
+  "produksjonsfil_lesbar": true,
+  "univers_lik_produksjon": true,
+  "kalenderreferanse_OSEBX_ok": true,
+  "kjernetickere_bestått": true,
+  "bestått_andel_minst_85_prosent": true
+ },
+ "teller": {
+  "testet": 50,
+  "bestått": 44,
+  "feilet": 6,
+  "perTest": {
+   "marked": {
+    "bestått": 45,
+    "feilet": [],
+    "ikke_utført": []
+   },
+   "kronologi": {
+    "bestått": 45,
+    "feilet": [],
+    "ikke_utført": []
+   },
+   "ohlc_konsistens": {
+    "bestått": 45,
+    "feilet": [],
+    "ikke_utført": []
+   },
+   "kalender": {
+    "bestått": 45,
+    "feilet": [],
+    "ikke_utført": []
+   },
+   "dekning": {
+    "bestått": 44,
+    "feilet": [
+     "OBX.OL"
+    ],
+    "ikke_utført": []
+   },
+   "ferskhet": {
+    "bestått": 45,
+    "feilet": [],
+    "ikke_utført": []
+   },
+   "mot_produksjon": {
+    "bestått": 44,
+    "feilet": [],
+    "ikke_utført": [
+     "OBX.OL"
+    ]
+   },
+   "henting": {
+    "bestått": 0,
+    "feilet": [
+     "SRBNK.OL",
+     "SCHA.OL",
+     "SCHB.OL",
+     "CRAYN.OL",
+     "RECSI.OL"
+    ],
+    "ikke_utført": []
+   }
+  }
+ },
+ "tickere": {
+  "OSEBX.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "OBX.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "dekning": "1 gyldige rader (krav ≥ 25)"
+   },
+   "ikke_utførte_tester": [
+    "mot_produksjon"
+   ]
+  },
+  "EQNR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "DNB.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "MOWI.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "TEL.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "YAR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "NHY.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "ORK.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "SALM.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "AKRBP.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "KOG.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "GJF.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "STB.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "SRBNK.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "henting": "ingen daglige data fra kilden"
+   },
+   "ikke_utførte_tester": []
+  },
+  "SUBC.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "FRO.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "AKER.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "BAKKA.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "LSG.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "TGS.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "VAR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "NOD.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "NEL.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "HEX.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "TOM.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "SCHA.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "henting": "ingen daglige data fra kilden"
+   },
+   "ikke_utførte_tester": []
+  },
+  "SCHB.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "henting": "ingen daglige data fra kilden"
+   },
+   "ikke_utførte_tester": []
+  },
+  "ELK.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "ENTRA.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "AUSS.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "VEI.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "EPR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "KID.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "PROT.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "MING.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "BWLPG.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "HAFNI.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "WAWI.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "BORR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "ODL.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "AKSO.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "NAS.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "ATEA.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "CRAYN.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "henting": "ingen daglige data fra kilden"
+   },
+   "ikke_utførte_tester": []
+  },
+  "KIT.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "BONHR.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "PLT.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  },
+  "RECSI.OL": {
+   "bestått": false,
+   "feilede_tester": {
+    "henting": "ingen daglige data fra kilden"
+   },
+   "ikke_utførte_tester": []
+  },
+  "AUTO.OL": {
+   "bestått": true,
+   "feilede_tester": {},
+   "ikke_utførte_tester": []
+  }
+ },
+ "alternativer": {
+  "SRBNK.OL": {
+   "selskap": "SpareBank 1 Sør-Norge",
+   "kandidater": [
+    {
+     "kode": "SRBNK.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "SRBANK.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "SB1NO.OL",
+     "kontrollkode": false,
+     "verdikt": "fungerer_og_samsvarer",
+     "navnFraKilde": "SpareBank 1 Sør-Norge ASA",
+     "børs": "OSL",
+     "valuta": "NOK",
+     "sisteDato": "2026-10-13",
+     "sisteClose": 224.0,
+     "antallRader": 66,
+     "feil": null
+    },
+    {
+     "kode": "SOON.OL",
+     "kontrollkode": true,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    }
+   ],
+   "sok": []
+  },
+  "SCHA.OL": {
+   "selskap": "Schibsted (A-aksje)",
+   "kandidater": [
+    {
+     "kode": "SCHA.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "SCHB.OL",
+     "kontrollkode": true,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    }
+   ],
+   "sok": [
+    {
+     "symbol": "SBBTF",
+     "navn": "SCHIBSTED ASA",
+     "børs": "OTC Markets"
+    },
+    {
+     "symbol": "XPGB.DU",
+     "navn": "Vend Marketplaces ASA         N",
+     "børs": "Dusseldorf Stock Exchange"
+    }
+   ]
+  },
+  "SCHB.OL": {
+   "selskap": "Schibsted (B-aksje)",
+   "kandidater": [
+    {
+     "kode": "SCHB.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "SCHA.OL",
+     "kontrollkode": true,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    }
+   ],
+   "sok": [
+    {
+     "symbol": "SBBTF",
+     "navn": "SCHIBSTED ASA",
+     "børs": "OTC Markets"
+    },
+    {
+     "symbol": "XPGB.DU",
+     "navn": "Vend Marketplaces ASA         N",
+     "børs": "Dusseldorf Stock Exchange"
+    }
+   ]
+  },
+  "CRAYN.OL": {
+   "selskap": "Crayon Group",
+   "kandidater": [
+    {
+     "kode": "CRAYN.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "SWON.SW",
+     "kontrollkode": true,
+     "verdikt": "annet_marked(EBS)",
+     "navnFraKilde": "SoftwareOne Holding AG",
+     "børs": "EBS",
+     "valuta": "CHF",
+     "sisteDato": "2026-10-13",
+     "sisteClose": 9.105,
+     "antallRader": 66,
+     "feil": null
+    }
+   ],
+   "sok": []
+  },
+  "RECSI.OL": {
+   "selskap": "REC Silicon",
+   "kandidater": [
+    {
+     "kode": "RECSI.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    }
+   ],
+   "sok": []
+  }
+ },
+ "merknader": [],
+ "yfinance": "1.7.0",
+ "produksjonsfil": {
+  "generatedAt": "2026-10-12T18:42:26+00:00",
+  "antallQuotes": 45,
+  "antallFailed": 5
+ },
+ "alternativer_merknad": "Kun dokumentasjon. Kodene er IKKE tatt inn i universet. 'fungerer_og_samsvarer' er en automatisk navnesjekk og må bekreftes manuelt før en kode eventuelt tas i bruk."
+}
