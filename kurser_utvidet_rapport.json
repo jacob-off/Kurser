@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "runAt": "2026-10-13T07:17:51+00:00",
- "runAtOslo": "2026-10-13T09:17:51+02:00",
- "status": "delvis_gyldig",
+ "runAt": "2026-10-13T07:21:40+00:00",
+ "runAtOslo": "2026-10-13T09:21:40+02:00",
+ "status": "UGYLDIG",
  "selftest": {
   "resultat": "bestått",
   "feil": [],
@@ -12,13 +12,13 @@
   "produksjonsfil_lesbar": true,
   "univers_lik_produksjon": true,
   "kalenderreferanse_OSEBX_ok": true,
-  "kjernetickere_bestått": true,
-  "bestått_andel_minst_85_prosent": true
+  "kjernetickere_bestått": false,
+  "bestått_andel_minst_85_prosent": false
  },
  "teller": {
   "testet": 50,
-  "bestått": 44,
-  "feilet": 6,
+  "bestått": 1,
+  "feilet": 49,
   "perTest": {
    "marked": {
     "bestått": 45,
@@ -38,6 +38,55 @@
    "kalender": {
     "bestått": 45,
     "feilet": [],
+    "ikke_utført": []
+   },
+   "kalender_fullstendig": {
+    "bestått": 2,
+    "feilet": [
+     "EQNR.OL",
+     "DNB.OL",
+     "MOWI.OL",
+     "TEL.OL",
+     "YAR.OL",
+     "NHY.OL",
+     "ORK.OL",
+     "SALM.OL",
+     "AKRBP.OL",
+     "KOG.OL",
+     "GJF.OL",
+     "STB.OL",
+     "SUBC.OL",
+     "FRO.OL",
+     "AKER.OL",
+     "BAKKA.OL",
+     "LSG.OL",
+     "TGS.OL",
+     "VAR.OL",
+     "NOD.OL",
+     "NEL.OL",
+     "HEX.OL",
+     "TOM.OL",
+     "ELK.OL",
+     "ENTRA.OL",
+     "AUSS.OL",
+     "VEI.OL",
+     "EPR.OL",
+     "KID.OL",
+     "PROT.OL",
+     "MING.OL",
+     "BWLPG.OL",
+     "HAFNI.OL",
+     "WAWI.OL",
+     "BORR.OL",
+     "ODL.OL",
+     "AKSO.OL",
+     "NAS.OL",
+     "ATEA.OL",
+     "KIT.OL",
+     "BONHR.OL",
+     "PLT.OL",
+     "AUTO.OL"
+    ],
     "ikke_utført": []
    },
    "dekning": {
@@ -88,63 +137,87 @@
    ]
   },
   "EQNR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "DNB.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "MOWI.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "TEL.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "YAR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "NHY.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "ORK.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "SALM.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "AKRBP.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "KOG.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "GJF.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "STB.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "SRBNK.OL": {
@@ -155,58 +228,80 @@
    "ikke_utførte_tester": []
   },
   "SUBC.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "FRO.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "AKER.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "BAKKA.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "LSG.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "TGS.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "VAR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "NOD.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "NEL.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "HEX.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "TOM.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "SCHA.OL": {
@@ -224,83 +319,115 @@
    "ikke_utførte_tester": []
   },
   "ELK.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "ENTRA.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "AUSS.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "VEI.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "EPR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "KID.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "PROT.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "MING.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "BWLPG.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "HAFNI.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "WAWI.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "BORR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "ODL.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "AKSO.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "NAS.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "ATEA.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "CRAYN.OL": {
@@ -311,18 +438,24 @@
    "ikke_utførte_tester": []
   },
   "KIT.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "BONHR.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "PLT.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   },
   "RECSI.OL": {
@@ -333,8 +466,10 @@
    "ikke_utførte_tester": []
   },
   "AUTO.OL": {
-   "bestått": true,
-   "feilede_tester": {},
+   "bestått": false,
+   "feilede_tester": {
+    "kalender_fullstendig": "hull: siste 5 handelsdager=['2026-10-12'], eldre=[]"
+   },
    "ikke_utførte_tester": []
   }
  },
@@ -374,7 +509,7 @@
      "børs": "OSL",
      "valuta": "NOK",
      "sisteDato": "2026-10-13",
-     "sisteClose": 224.0,
+     "sisteClose": 226.5,
      "antallRader": 66,
      "feil": null
     },
@@ -409,7 +544,19 @@
      "feil": "ingen daglige data fra kilden"
     },
     {
-     "kode": "SCHB.OL",
+     "kode": "VENDA.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "VENDB.OL",
      "kontrollkode": true,
      "verdikt": "ingen_data",
      "navnFraKilde": null,
@@ -419,6 +566,18 @@
      "sisteClose": null,
      "antallRader": 0,
      "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "VEND.OL",
+     "kontrollkode": true,
+     "verdikt": "fungerer_og_samsvarer",
+     "navnFraKilde": "Vend Marketplaces ASA",
+     "børs": "OSL",
+     "valuta": "NOK",
+     "sisteDato": "2026-10-13",
+     "sisteClose": 208.6,
+     "antallRader": 66,
+     "feil": null
     }
    ],
    "sok": [
@@ -450,7 +609,19 @@
      "feil": "ingen daglige data fra kilden"
     },
     {
-     "kode": "SCHA.OL",
+     "kode": "VENDB.OL",
+     "kontrollkode": false,
+     "verdikt": "ingen_data",
+     "navnFraKilde": null,
+     "børs": null,
+     "valuta": null,
+     "sisteDato": null,
+     "sisteClose": null,
+     "antallRader": 0,
+     "feil": "ingen daglige data fra kilden"
+    },
+    {
+     "kode": "VENDA.OL",
      "kontrollkode": true,
      "verdikt": "ingen_data",
      "navnFraKilde": null,
@@ -498,7 +669,7 @@
      "børs": "EBS",
      "valuta": "CHF",
      "sisteDato": "2026-10-13",
-     "sisteClose": 9.105,
+     "sisteClose": 9.06,
      "antallRader": 66,
      "feil": null
     }
@@ -524,12 +695,21 @@
    "sok": []
   }
  },
- "merknader": [],
+ "merknader": [
+  "Kritiske tester feilet; kurser_utvidet.json inneholder ingen data (UGYLDIG-stubb)."
+ ],
  "yfinance": "1.7.0",
  "produksjonsfil": {
   "generatedAt": "2026-10-12T18:42:26+00:00",
   "antallQuotes": 45,
   "antallFailed": 5
+ },
+ "diagnostikk_dekning": {
+  "OBX.OL": {
+   "rader_period_2mo": 1,
+   "rader_period_6mo": 1,
+   "feil_6mo": null
+  }
  },
  "alternativer_merknad": "Kun dokumentasjon. Kodene er IKKE tatt inn i universet. 'fungerer_og_samsvarer' er en automatisk navnesjekk og må bekreftes manuelt før en kode eventuelt tas i bruk."
 }
