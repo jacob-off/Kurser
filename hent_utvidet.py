@@ -34,6 +34,7 @@ TICKERS = ["OSEBX.OL", "OBX.OL",
     "NAS.OL", "ATEA.OL", "CRAYN.OL", "KIT.OL", "BONHR.OL", "PLT.OL", "RECSI.OL", "AUTO.OL"]
 CORE = ["OSEBX.OL", "EQNR.OL", "DNB.OL"]
 CALENDAR_REF = "OSEBX.OL"
+INDEXES = {"OSEBX.OL", "OBX.OL"}   # volum/omsetning er ikke meningsfylt for indekser
 OSLO_EXCHANGES = {"OSL"}
 
 # Alternative koder som BARE testes og dokumenteres. De tas ikke inn i universet.
@@ -41,10 +42,10 @@ OSLO_EXCHANGES = {"OSL"}
 ALTERNATIVER = {
     "SRBNK.OL": {"selskap": "SpareBank 1 Sør-Norge", "navn": ["sparebank 1 sor norge"],
                  "koder": [("SRBNK.OL", False), ("SRBANK.OL", False), ("SB1NO.OL", False), ("SOON.OL", True)]},
-    "SCHA.OL": {"selskap": "Schibsted (A-aksje)", "navn": ["schibsted"],
-                "koder": [("SCHA.OL", False), ("SCHB.OL", True)]},
-    "SCHB.OL": {"selskap": "Schibsted (B-aksje)", "navn": ["schibsted"],
-                "koder": [("SCHB.OL", False), ("SCHA.OL", True)]},
+    "SCHA.OL": {"selskap": "Schibsted (A-aksje)", "navn": ["schibsted", "vend marketplaces"],
+                "koder": [("SCHA.OL", False), ("VENDA.OL", False), ("VENDB.OL", True), ("VEND.OL", True)]},
+    "SCHB.OL": {"selskap": "Schibsted (B-aksje)", "navn": ["schibsted", "vend marketplaces"],
+                "koder": [("SCHB.OL", False), ("VENDB.OL", False), ("VENDA.OL", True)]},
     "CRAYN.OL": {"selskap": "Crayon Group", "navn": ["crayon"],
                  "koder": [("CRAYN.OL", False), ("SWON.SW", True)]},
     "RECSI.OL": {"selskap": "REC Silicon", "navn": ["rec silicon"],
@@ -77,7 +78,7 @@ def is_final(date_str, now_oslo):
     return True
 
 
-def validate_rows(raw_rows, now_oslo):
+def validate_rows(raw_rows, now_oslo, is_index=False):
     """raw_rows: [{date, open, high, low, close, volume}] i kildens rekkefølge.
     Returnerer (gyldige, ugyldige, manglende_felt). Ingenting fylles inn."""
     valid, invalid, missing = [], [], []
@@ -115,10 +116,12 @@ def validate_rows(raw_rows, now_oslo):
                 missing.append({"date": d, "field": name, "reason": "mangler fra kilden (ikke fylt inn)"})
         if v is not None and v == 0:
             flags.append("volum_0_fra_kilde")  # verdien beholdes uendret
+        if is_index:
+            flags.append("indeks_volum_ikke_meningsfylt")
         valid.append({
             "date": d, "open": r4(o), "high": r4(h), "low": r4(l), "close": r4(c),
             "volume": None if v is None else int(round(v)),
-            "turnoverEstNok": None if v is None else round(c * v, 0),
+            "turnoverEstNok": None if (v is None or is_index) else round(c * v, 0),
             "final": is_final(d, now_oslo), "flags": flags})
     return valid, invalid, missing
 
@@ -140,6 +143,24 @@ def compare_with_prod(valid_rows, prod_closes, tol=0.0005):
         if rel > tol:
             diffs.append({"date": r["date"], "ny": r["close"], "produksjon": prod[r["date"]], "relAvvik": round(rel, 6)})
     return n, diffs
+
+
+def missing_calendar_dates(valid, cal_dates):
+    """Handelsdager i referansekalenderen (OSEBX) fra tickerens første dato og utover som mangler hos tickeren."""
+    if not valid or not cal_dates:
+        return []
+    have = {r["date"] for r in valid}
+    lo = valid[0]["date"]
+    return sorted(d for d in cal_dates if d >= lo and d not in have)
+
+
+def calendar_complete(missing, cal_dates, recent_n=5, max_older=2):
+    """Strengt for de siste recent_n handelsdagene (agentene bruker dem); maks max_older eldre hull."""
+    recent = set(sorted(cal_dates)[-recent_n:])
+    gap_recent = [d for d in missing if d in recent]
+    older = [d for d in missing if d not in recent]
+    ok = (not gap_recent) and len(older) <= max_older
+    return ok, gap_recent, older
 
 
 def run_ticker_tests(sym, meta, raw_dates, valid, invalid, cal_dates, prod_entry, prod_ok, now_oslo):
@@ -177,6 +198,16 @@ def run_ticker_tests(sym, meta, raw_dates, valid, invalid, cal_dates, prod_entry
         extra = [r["date"] for r in valid if r["date"] not in cal_dates]
         put("kalender", "bestått" if not extra else "feilet",
             "" if not extra else "datoer som ikke finnes i OSEBX: %s" % extra[:5])
+    # 4b kalenderfullstendighet (hull i handelsdager)
+    if sym == CALENDAR_REF:
+        put("kalender_fullstendig", "bestått", "er selv kalenderreferansen")
+    elif cal_dates is None:
+        put("kalender_fullstendig", "ikke_utført", "kalenderreferanse (OSEBX) mangler")
+    else:
+        miss = missing_calendar_dates(valid, cal_dates)
+        ok, gap_recent, older = calendar_complete(miss, cal_dates)
+        put("kalender_fullstendig", "bestått" if ok else "feilet",
+            "ingen hull" if not miss else "hull: siste 5 handelsdager=%s, eldre=%s" % (gap_recent, older))
     # 5 dekning
     put("dekning", "bestått" if len(valid) >= MIN_ROWS else "feilet",
         "%d gyldige rader (krav ≥ %d)" % (len(valid), MIN_ROWS))
@@ -207,7 +238,7 @@ def ticker_passes(tests):
     for name, t in tests.items():
         if t["resultat"] == "feilet":
             return False
-        if t["resultat"] == "ikke_utført" and name not in ("mot_produksjon", "kalender"):
+        if t["resultat"] == "ikke_utført" and name not in ("mot_produksjon", "kalender", "kalender_fullstendig"):
             return False
     return True
 
@@ -324,6 +355,21 @@ def selftest():
     check(alt_verdict({"rows": [1], "exchange": "OSL", "currency": "NOK", "lastDate": "2026-05-01",
                        "name": "Crayon", "symbol": "CRAYN.OL"}, ["crayon"], False, now).startswith("foreldet"),
           "gammel kurs = foreldet")
+    cal = {"2026-10-05", "2026-10-06", "2026-10-07", "2026-10-08", "2026-10-09", "2026-10-12", "2026-10-13"}
+    base = {"open": 1, "high": 2, "low": 1, "close": 2, "volume": 10}
+    rows_full = [dict(base, date=d) for d in sorted(cal)]
+    vf, _, _ = validate_rows(rows_full, now)
+    check(missing_calendar_dates(vf, cal) == [], "ingen hull når alle datoer finnes")
+    vg, _, _ = validate_rows([r for r in rows_full if r["date"] != "2026-10-12"], now)
+    mg = missing_calendar_dates(vg, cal)
+    check(mg == ["2026-10-12"], "manglende 12.10 skal oppdages")
+    ok, gr, old = calendar_complete(mg, cal)
+    check(not ok and gr == ["2026-10-12"], "hull i siste 5 handelsdager skal feile")
+    vh, _, _ = validate_rows([r for r in rows_full if r["date"] != "2026-10-06"], now)
+    ok, gr, old = calendar_complete(missing_calendar_dates(vh, cal), cal)
+    check(ok and old == ["2026-10-06"], "ett eldre hull tolereres, men rapporteres")
+    vi, _, _ = validate_rows([dict(good, volume=5000)], now, is_index=True)
+    check(vi[0]["turnoverEstNok"] is None and "indeks_volum_ikke_meningsfylt" in vi[0]["flags"], "indeks: ingen omsetningsanslag")
     return fails
 
 
@@ -382,7 +428,7 @@ def main():
     # kalenderreferanse
     cal_dates = None
     if fetched[CALENDAR_REF]["rows"]:
-        v, _, _ = validate_rows(fetched[CALENDAR_REF]["rows"], now_oslo)
+        v, _, _ = validate_rows(fetched[CALENDAR_REF]["rows"], now_oslo, is_index=True)
         cal_dates = {r["date"] for r in v}
 
     quotes, failed, ticker_results = {}, {}, {}
@@ -394,7 +440,7 @@ def main():
             valid, invalid, missing = [], [], []
         else:
             raw_dates = [r["date"] for r in f["rows"]]
-            valid_all, invalid, missing = validate_rows(f["rows"], now_oslo)
+            valid_all, invalid, missing = validate_rows(f["rows"], now_oslo, is_index=(sym in INDEXES))
             valid = valid_all[-HISTORY_DAYS:]
             keep = {r["date"] for r in valid}
             missing = [x for x in missing if x["date"] in keep]
@@ -405,10 +451,7 @@ def main():
         ticker_results[sym] = {"bestått": passed,
                                "feilede_tester": {k: v["detalj"] for k, v in tests.items() if v["resultat"] == "feilet"},
                                "ikke_utførte_tester": [k for k, v in tests.items() if v["resultat"] == "ikke_utført"]}
-        missing_dates = []
-        if sym != CALENDAR_REF and cal_dates and valid:
-            lo = valid[0]["date"]
-            missing_dates = sorted(d for d in cal_dates if d >= lo and d not in {r["date"] for r in valid})
+        missing_dates = [] if sym == CALENDAR_REF else missing_calendar_dates(valid, cal_dates)
         entry = {"status": None, "fetchedAt": fetched_at, "name": f["meta"].get("name"),
                  "exchange": f["meta"].get("exchange"), "currency": f["meta"].get("currency"),
                  "history": valid, "invalidRows": invalid, "missingFields": missing,
@@ -442,6 +485,14 @@ def main():
                 per_test[name]["feilet"].append(sym)
             else:
                 per_test[name]["ikke_utført"].append(sym)
+    diag = {}
+    for sym, e in quotes.items():
+        if e["tests"].get("dekning", {}).get("resultat") == "feilet":
+            raw6 = fetch_raw(yf, sym, period="6mo")
+            diag[sym] = {"rader_period_2mo": len(fetched[sym]["rows"]), "rader_period_6mo": len(raw6["rows"]),
+                         "feil_6mo": raw6["error"]}
+            time.sleep(0.4)
+    report["diagnostikk_dekning"] = diag
     report["teller"] = {"testet": tested, "bestått": passed_n, "feilet": tested - passed_n,
                         "perTest": per_test}
     report["tickere"] = ticker_results
@@ -489,7 +540,12 @@ def main():
 
     if not all_critical_ok:
         report["status"] = "UGYLDIG"
-        report["merknader"].append("Kritiske tester feilet; %s er IKKE skrevet." % OUT_DATA)
+        report["merknader"].append("Kritiske tester feilet; %s inneholder ingen data (UGYLDIG-stubb)." % OUT_DATA)
+        # Ikke la en eldre fil stå igjen som ser gyldig ut: erstatt med tydelig ugyldig stubb uten data.
+        stub = {"schemaVersion": SCHEMA_VERSION, "status": "UGYLDIG", "generatedAt": now_utc.isoformat(),
+                "årsak": "Kritiske tester feilet: %s" % [k for k, v in kritisk.items() if not v],
+                "rapport": OUT_REPORT, "quotes": {}, "failed": {}}
+        json.dump(stub, open(OUT_DATA, "w"), ensure_ascii=False, indent=1)
         json.dump(report, open(OUT_REPORT, "w"), ensure_ascii=False, indent=1)
         print("UGYLDIG: kritiske tester feilet", {k: v for k, v in kritisk.items() if not v})
         sys.exit(1)
