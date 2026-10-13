@@ -1,0 +1,39 @@
+name: Test utvidet kursdata
+
+# Kun manuell kjøring. Ingen tidsplan. Rører ikke kurser.json eller arbeidsflyten "Hent kurser".
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: test-utvidet
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install yfinance pandas
+      - name: Logikktest (konstruerte data, publiseres ikke)
+        run: python hent_utvidet.py --selftest
+      - name: Hent og test utvidet kursdata
+        run: python hent_utvidet.py
+      - name: Lagre resultat (også ved feil, slik at rapporten kan leses)
+        if: always()
+        run: |
+          git config user.name "kurser-bot"
+          git config user.email "kurser-bot@users.noreply.github.com"
+          [ -f kurser_utvidet.json ] && git add kurser_utvidet.json || true
+          [ -f kurser_utvidet_rapport.json ] && git add kurser_utvidet_rapport.json || true
+          if git diff --cached --quiet; then echo "Ingen endringer"; exit 0; fi
+          git commit -m "Test: utvidet kursdata"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            sleep 5
+          done
