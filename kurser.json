@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-14T15:06:34+00:00",
+ "generatedAt": "2026-10-14T16:09:08+00:00",
  "source": "Yahoo Finance via yfinance (kan være forsinket)",
  "quotes": {
   "OSEBX.OL": {
@@ -385,10 +385,10 @@
    ]
   },
   "AKRBP.OL": {
-   "last": 370.0,
+   "last": 370.1,
    "asOf": "2026-10-14T16:15:00+02:00",
    "prevClose": 360.0,
-   "changePct": 2.78,
+   "changePct": 2.81,
    "intraday": true,
    "dailyCloses": [
     {
