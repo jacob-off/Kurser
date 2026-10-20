@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-20T10:32:21+00:00",
+ "generatedAt": "2026-10-20T15:11:33+00:00",
  "source": "Yahoo Finance via yfinance (kan være forsinket)",
  "quotes": {
   "OSEBX.OL": {
-   "last": 2092.6799,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 2091.8101,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 2098.8101,
-   "changePct": -0.29,
+   "changePct": -0.33,
    "intraday": true,
    "dailyCloses": [
     {
@@ -39,28 +39,28 @@
     },
     {
      "date": "2026-10-20",
-     "close": 2092.6799
+     "close": 2089.8899
     }
    ]
   },
   "OBX.OL": {
-   "last": 2006.98,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 2003.38,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": null,
    "changePct": null,
    "intraday": true,
    "dailyCloses": [
     {
      "date": "2026-10-20",
-     "close": 2006.98
+     "close": 2001.55
     }
    ]
   },
   "EQNR.OL": {
-   "last": 436.2,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 428.6,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 435.0,
-   "changePct": 0.28,
+   "changePct": -1.47,
    "intraday": true,
    "dailyCloses": [
     {
@@ -93,15 +93,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 436.2
+     "close": 427.3
     }
    ]
   },
   "DNB.OL": {
-   "last": 304.7,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 306.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 306.5,
-   "changePct": -0.59,
+   "changePct": -0.16,
    "intraday": true,
    "dailyCloses": [
     {
@@ -134,13 +134,13 @@
     },
     {
      "date": "2026-10-20",
-     "close": 304.7
+     "close": 305.3
     }
    ]
   },
   "MOWI.OL": {
    "last": 214.0,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 213.2,
    "changePct": 0.38,
    "intraday": true,
@@ -175,15 +175,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 214.0
+     "close": 213.8
     }
    ]
   },
   "TEL.OL": {
-   "last": 126.2,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 126.3,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 125.6,
-   "changePct": 0.48,
+   "changePct": 0.56,
    "intraday": true,
    "dailyCloses": [
     {
@@ -216,15 +216,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 126.2
+     "close": 126.0
     }
    ]
   },
   "YAR.OL": {
-   "last": 402.0,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 401.5,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 408.0,
-   "changePct": -1.47,
+   "changePct": -1.59,
    "intraday": true,
    "dailyCloses": [
     {
@@ -262,10 +262,10 @@
    ]
   },
   "NHY.OL": {
-   "last": 74.3,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 74.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 75.44,
-   "changePct": -1.51,
+   "changePct": -1.38,
    "intraday": true,
    "dailyCloses": [
     {
@@ -298,15 +298,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 74.3
+     "close": 74.2
     }
    ]
   },
   "ORK.OL": {
-   "last": 95.9,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 96.15,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 95.15,
-   "changePct": 0.79,
+   "changePct": 1.05,
    "intraday": true,
    "dailyCloses": [
     {
@@ -339,15 +339,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 95.9
+     "close": 96.15
     }
    ]
   },
   "SALM.OL": {
-   "last": 567.5,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 571.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 559.5,
-   "changePct": 1.43,
+   "changePct": 2.06,
    "intraday": true,
    "dailyCloses": [
     {
@@ -380,15 +380,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 567.5
+     "close": 574.0
     }
    ]
   },
   "AKRBP.OL": {
-   "last": 382.4,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 376.2,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 375.7,
-   "changePct": 1.78,
+   "changePct": 0.13,
    "intraday": true,
    "dailyCloses": [
     {
@@ -421,15 +421,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 382.4
+     "close": 377.2
     }
    ]
   },
   "KOG.OL": {
-   "last": 305.6,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 306.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 313.3,
-   "changePct": -2.46,
+   "changePct": -2.2,
    "intraday": true,
    "dailyCloses": [
     {
@@ -462,15 +462,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 305.6
+     "close": 306.6
     }
    ]
   },
   "GJF.OL": {
-   "last": 263.2,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 265.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 265.4,
-   "changePct": -0.83,
+   "changePct": 0.0,
    "intraday": true,
    "dailyCloses": [
     {
@@ -503,15 +503,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 263.2
+     "close": 264.2
     }
    ]
   },
   "STB.OL": {
-   "last": 189.3,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 190.5,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 189.0,
-   "changePct": 0.16,
+   "changePct": 0.79,
    "intraday": true,
    "dailyCloses": [
     {
@@ -544,15 +544,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 189.3
+     "close": 190.6
     }
    ]
   },
   "SUBC.OL": {
-   "last": 331.0,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 329.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 336.0,
-   "changePct": -1.49,
+   "changePct": -1.96,
    "intraday": true,
    "dailyCloses": [
     {
@@ -585,15 +585,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 331.0
+     "close": 330.0
     }
    ]
   },
   "FRO.OL": {
-   "last": 474.3,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 481.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 489.7,
-   "changePct": -3.14,
+   "changePct": -1.78,
    "intraday": true,
    "dailyCloses": [
     {
@@ -626,15 +626,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 474.3
+     "close": 477.8
     }
    ]
   },
   "AKER.OL": {
-   "last": 1204.0,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 1194.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 1170.0,
-   "changePct": 2.91,
+   "changePct": 2.05,
    "intraday": true,
    "dailyCloses": [
     {
@@ -667,15 +667,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 1204.0
+     "close": 1188.0
     }
    ]
   },
   "BAKKA.OL": {
-   "last": 456.6,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 461.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 452.0,
-   "changePct": 1.02,
+   "changePct": 1.99,
    "intraday": true,
    "dailyCloses": [
     {
@@ -708,15 +708,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 456.6
+     "close": 460.4
     }
    ]
   },
   "LSG.OL": {
-   "last": 43.3,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 43.48,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 42.78,
-   "changePct": 1.22,
+   "changePct": 1.64,
    "intraday": true,
    "dailyCloses": [
     {
@@ -749,15 +749,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 43.3
+     "close": 43.4
     }
    ]
   },
   "TGS.OL": {
-   "last": 137.9,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 136.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 137.0,
-   "changePct": 0.66,
+   "changePct": -0.44,
    "intraday": true,
    "dailyCloses": [
     {
@@ -790,15 +790,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 137.9
+     "close": 137.6
     }
    ]
   },
   "VAR.OL": {
-   "last": 57.0,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 56.12,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 56.58,
-   "changePct": 0.74,
+   "changePct": -0.81,
    "intraday": true,
    "dailyCloses": [
     {
@@ -831,15 +831,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 57.0
+     "close": 56.22
     }
    ]
   },
   "NOD.OL": {
-   "last": 169.3,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 173.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 171.6,
-   "changePct": -1.34,
+   "changePct": 0.82,
    "intraday": true,
    "dailyCloses": [
     {
@@ -872,15 +872,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 169.3
+     "close": 174.1
     }
    ]
   },
   "NEL.OL": {
-   "last": 2.01,
-   "asOf": "2026-10-20T11:35:00+02:00",
+   "last": 2.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 2.0,
-   "changePct": 0.5,
+   "changePct": 0.0,
    "intraday": true,
    "dailyCloses": [
     {
@@ -913,15 +913,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 2.01
+     "close": 2.005
     }
    ]
   },
   "HEX.OL": {
-   "last": 11.68,
-   "asOf": "2026-10-20T12:00:00+02:00",
+   "last": 11.81,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 12.0,
-   "changePct": -2.67,
+   "changePct": -1.58,
    "intraday": true,
    "dailyCloses": [
     {
@@ -954,15 +954,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 11.68
+     "close": 11.86
     }
    ]
   },
   "TOM.OL": {
-   "last": 91.55,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 92.6,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 92.3,
-   "changePct": -0.81,
+   "changePct": 0.33,
    "intraday": true,
    "dailyCloses": [
     {
@@ -995,15 +995,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 91.55
+     "close": 92.6
     }
    ]
   },
   "ELK.OL": {
-   "last": 31.4,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 31.48,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 31.7,
-   "changePct": -0.95,
+   "changePct": -0.69,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1036,15 +1036,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 31.4
+     "close": 31.42
     }
    ]
   },
   "ENTRA.OL": {
-   "last": 91.0,
-   "asOf": "2026-10-20T12:05:00+02:00",
+   "last": 91.5,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 92.1,
-   "changePct": -1.19,
+   "changePct": -0.65,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1077,15 +1077,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 91.0
+     "close": 91.6
     }
    ]
   },
   "AUSS.OL": {
-   "last": 83.2,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 82.8,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 82.6,
-   "changePct": 0.73,
+   "changePct": 0.24,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1118,15 +1118,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 83.2
+     "close": 82.9
     }
    ]
   },
   "VEI.OL": {
-   "last": 205.0,
-   "asOf": "2026-10-20T12:05:00+02:00",
+   "last": 207.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 204.0,
-   "changePct": 0.49,
+   "changePct": 1.47,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1159,15 +1159,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 205.0
+     "close": 207.0
     }
    ]
   },
   "EPR.OL": {
-   "last": 85.7,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 85.9,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 83.5,
-   "changePct": 2.63,
+   "changePct": 2.87,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1200,15 +1200,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 85.7
+     "close": 86.1
     }
    ]
   },
   "KID.OL": {
-   "last": 136.8,
-   "asOf": "2026-10-20T12:05:00+02:00",
+   "last": 137.2,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 137.2,
-   "changePct": -0.29,
+   "changePct": 0.0,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1241,15 +1241,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 136.8
+     "close": 137.6
     }
    ]
   },
   "PROT.OL": {
-   "last": 431.8,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 433.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 432.4,
-   "changePct": -0.14,
+   "changePct": 0.23,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1282,15 +1282,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 431.8
+     "close": 432.0
     }
    ]
   },
   "MING.OL": {
-   "last": 212.35,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 212.85,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 213.0,
-   "changePct": -0.31,
+   "changePct": -0.07,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1323,15 +1323,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 212.35
+     "close": 212.8
     }
    ]
   },
   "BWLPG.OL": {
-   "last": 228.4,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 230.8,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 234.2,
-   "changePct": -2.48,
+   "changePct": -1.45,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1364,15 +1364,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 228.4
+     "close": 229.2
     }
    ]
   },
   "HAFNI.OL": {
-   "last": 93.15,
-   "asOf": "2026-10-20T12:10:00+02:00",
+   "last": 95.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 94.75,
-   "changePct": -1.69,
+   "changePct": 0.69,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1405,15 +1405,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 93.15
+     "close": 95.0
     }
    ]
   },
   "WAWI.OL": {
-   "last": 173.4,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 174.9,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 176.1,
-   "changePct": -1.53,
+   "changePct": -0.68,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1446,15 +1446,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 173.4
+     "close": 174.6
     }
    ]
   },
   "BORR.OL": {
-   "last": 40.5,
-   "asOf": "2026-10-20T12:05:00+02:00",
+   "last": 39.905,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 40.89,
-   "changePct": -0.95,
+   "changePct": -2.41,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1487,15 +1487,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 40.5
+     "close": 39.905
     }
    ]
   },
   "ODL.OL": {
-   "last": 106.6,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 105.4,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 104.4,
-   "changePct": 2.11,
+   "changePct": 0.96,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1528,15 +1528,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 106.6
+     "close": 105.6
     }
    ]
   },
   "AKSO.OL": {
-   "last": 38.4,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 38.16,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 39.64,
-   "changePct": -3.13,
+   "changePct": -3.73,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1569,15 +1569,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 38.4
+     "close": 38.16
     }
    ]
   },
   "NAS.OL": {
-   "last": 10.835,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 11.13,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 10.965,
-   "changePct": -1.19,
+   "changePct": 1.5,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1610,15 +1610,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 10.835
+     "close": 11.15
     }
    ]
   },
   "ATEA.OL": {
-   "last": 158.8,
-   "asOf": "2026-10-20T12:05:00+02:00",
+   "last": 159.0,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 159.6,
-   "changePct": -0.5,
+   "changePct": -0.38,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1656,10 +1656,10 @@
    ]
   },
   "KIT.OL": {
-   "last": 94.6,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 97.5,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 97.3,
-   "changePct": -2.77,
+   "changePct": 0.21,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1692,15 +1692,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 94.6
+     "close": 97.4
     }
    ]
   },
   "BONHR.OL": {
-   "last": 245.5,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 247.5,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 249.0,
-   "changePct": -1.41,
+   "changePct": -0.6,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1733,15 +1733,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 245.5
+     "close": 246.5
     }
    ]
   },
   "PLT.OL": {
-   "last": 17.22,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 17.56,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 17.3,
-   "changePct": -0.46,
+   "changePct": 1.5,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1774,15 +1774,15 @@
     },
     {
      "date": "2026-10-20",
-     "close": 17.22
+     "close": 17.58
     }
    ]
   },
   "AUTO.OL": {
-   "last": 14.87,
-   "asOf": "2026-10-20T12:15:00+02:00",
+   "last": 15.19,
+   "asOf": "2026-10-20T16:15:00+02:00",
    "prevClose": 15.23,
-   "changePct": -2.36,
+   "changePct": -0.26,
    "intraday": true,
    "dailyCloses": [
     {
@@ -1815,7 +1815,7 @@
     },
     {
      "date": "2026-10-20",
-     "close": 14.87
+     "close": 15.21
     }
    ]
   }
