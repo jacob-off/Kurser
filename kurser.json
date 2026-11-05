@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-05T17:57:33+00:00",
+ "generatedAt": "2026-11-05T21:12:32+00:00",
  "source": "Yahoo Finance via yfinance (kan være forsinket)",
  "quotes": {
   "OSEBX.OL": {
@@ -39,7 +39,7 @@
     },
     {
      "date": "2026-11-05",
-     "close": 2079.3601
+     "close": 2080.5901
     }
    ]
   },
