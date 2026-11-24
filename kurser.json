@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-24T01:52:45+00:00",
+ "generatedAt": "2026-11-24T02:31:22+00:00",
  "source": "Yahoo Finance via yfinance (kan være forsinket)",
  "quotes": {
   "OSEBX.OL": {
@@ -39,7 +39,7 @@
     },
     {
      "date": "2026-11-23",
-     "close": NaN
+     "close": 2047.9399
     }
    ]
   },
@@ -50,10 +50,6 @@
    "changePct": 0.5,
    "intraday": true,
    "dailyCloses": [
-    {
-     "date": "2026-11-11",
-     "close": 2019.38
-    },
     {
      "date": "2026-11-12",
      "close": 2015.85
@@ -81,6 +77,10 @@
     {
      "date": "2026-11-20",
      "close": 1946.05
+    },
+    {
+     "date": "2026-11-23",
+     "close": 1954.98
     }
    ]
   },
